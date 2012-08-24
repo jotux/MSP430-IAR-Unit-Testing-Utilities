@@ -1,0 +1,92 @@
+// This is a custom device description file to spoof the amount of memory on the
+// device so we can write more unit tests.
+[Memory]
+//         Name             AdrSpace    StartAdr    EndAdr    AccType
+Memory0  = SFR              Memory      0x0000      0x0FFF    RW
+Memory1  = RAM              Memory      0x1C00      0x1FFF    RW
+Memory2  = FRAM             Memory      0xC200      0xFFFFF    R
+
+
+// ---------------------------------------------------------
+// I/O Register description file
+//
+
+[SfrInclude]
+File = msp430fr5739.sfr
+
+// -----------------------------------------------
+// Interrupt definitions
+//
+
+[InterruptList]
+//                 Id                      Table Adr     Prio    Enable                  Pending   
+Interrupt0   =  RTC_VECTOR              0x4E          2       RTCCTL01.RTCRDYIE       RTCCTL01.RTCRDYIFG
+Interrupt1   =  PORT4_VECTOR            0x50          2       P4IE.P4IE0              P4IFG.P4IFG0   
+Interrupt2   =  PORT4_VECTOR            0x50          2       P4IE.P4IE1              P4IFG.P4IFG1   
+Interrupt3   =  PORT4_VECTOR            0x50          2       P4IE.P4IE2              P4IFG.P4IFG2   
+Interrupt4   =  PORT4_VECTOR            0x50          2       P4IE.P4IE3              P4IFG.P4IFG3   
+Interrupt5   =  PORT4_VECTOR            0x50          2       P4IE.P4IE4              P4IFG.P4IFG4   
+Interrupt6   =  PORT4_VECTOR            0x50          2       P4IE.P4IE5              P4IFG.P4IFG5   
+Interrupt7   =  PORT4_VECTOR            0x50          2       P4IE.P4IE6              P4IFG.P4IFG6   
+Interrupt8   =  PORT4_VECTOR            0x50          2       P4IE.P4IE7              P4IFG.P4IFG7   
+Interrupt9   =  PORT3_VECTOR            0x52          2       P3IE.P3IE0              P3IFG.P3IFG0   
+Interrupt10  =  PORT3_VECTOR            0x52          2       P3IE.P3IE1              P3IFG.P3IFG1   
+Interrupt11  =  PORT3_VECTOR            0x52          2       P3IE.P3IE2              P3IFG.P3IFG2   
+Interrupt12  =  PORT3_VECTOR            0x52          2       P3IE.P3IE3              P3IFG.P3IFG3   
+Interrupt13  =  PORT3_VECTOR            0x52          2       P3IE.P3IE4              P3IFG.P3IFG4   
+Interrupt14  =  PORT3_VECTOR            0x52          2       P3IE.P3IE5              P3IFG.P3IFG5   
+Interrupt15  =  PORT3_VECTOR            0x52          2       P3IE.P3IE6              P3IFG.P3IFG6   
+Interrupt16  =  PORT3_VECTOR            0x52          2       P3IE.P3IE7              P3IFG.P3IFG7   
+Interrupt17  =  TIMER2_B1_VECTOR        0x54          2       TB2CCTL1.CCIE           TB2CCTL1.CCIFG   
+Interrupt18  =  TIMER2_B1_VECTOR        0x54          2       TB2CCTL2.CCIE           TB2CCTL2.CCIFG   
+Interrupt19  =  TIMER2_B1_VECTOR        0x54          2       TB2CTL.TBIE             TB2CTL.TBIFG   
+Interrupt20  =  TIMER2_B0_VECTOR        0x56          2       TB2CCTL0.CCIE           TB2CCTL0.CCIFG   
+Interrupt21  =  PORT2_VECTOR            0x58          2       P2IE.P2IE0              P2IFG.P2IFG0   
+Interrupt22  =  PORT2_VECTOR            0x58          2       P2IE.P2IE1              P2IFG.P2IFG1   
+Interrupt23  =  PORT2_VECTOR            0x58          2       P2IE.P2IE2              P2IFG.P2IFG2   
+Interrupt24  =  PORT2_VECTOR            0x58          2       P2IE.P2IE3              P2IFG.P2IFG3   
+Interrupt25  =  PORT2_VECTOR            0x58          2       P2IE.P2IE4              P2IFG.P2IFG4   
+Interrupt26  =  PORT2_VECTOR            0x58          2       P2IE.P2IE5              P2IFG.P2IFG5   
+Interrupt27  =  PORT2_VECTOR            0x58          2       P2IE.P2IE6              P2IFG.P2IFG6   
+Interrupt28  =  PORT2_VECTOR            0x58          2       P2IE.P2IE7              P2IFG.P2IFG7   
+Interrupt29  =  TIMER1_B1_VECTOR        0x5A          2       TB1CCTL1.CCIE           TB1CCTL1.CCIFG     
+Interrupt30  =  TIMER1_B1_VECTOR        0x5A          2       TB1CCTL2.CCIE           TB1CCTL2.CCIFG     
+Interrupt31  =  TIMER1_B1_VECTOR        0x5A          2       TB1CTL.TBIE             TB1CTL.TBIFG    
+Interrupt32  =  TIMER1_B0_VECTOR        0x5C          2       TB1CCTL0.CCIE           TB1CCTL0.CCIFG     
+Interrupt33  =  PORT1_VECTOR            0x5E          2       P1IE.P1IE0              P1IFG.P1IFG0   
+Interrupt34  =  PORT1_VECTOR            0x5E          2       P1IE.P1IE1              P1IFG.P1IFG1   
+Interrupt35  =  PORT1_VECTOR            0x5E          2       P1IE.P1IE2              P1IFG.P1IFG2   
+Interrupt36  =  PORT1_VECTOR            0x5E          2       P1IE.P1IE3              P1IFG.P1IFG3   
+Interrupt37  =  PORT1_VECTOR            0x5E          2       P1IE.P1IE4              P1IFG.P1IFG4   
+Interrupt38  =  PORT1_VECTOR            0x5E          2       P1IE.P1IE5              P1IFG.P1IFG5   
+Interrupt39  =  PORT1_VECTOR            0x5E          2       P1IE.P1IE6              P1IFG.P1IFG6   
+Interrupt40  =  PORT1_VECTOR            0x5E          2       P1IE.P1IE7              P1IFG.P1IFG7   
+Interrupt41  =  TIMER1_A1_TACCR1_VECTOR 0x60          2       TA1CCTL1.CCIE           TA1CCTL1.CCIFG 
+Interrupt42  =  TIMER1_A1_TACCR2_VECTOR 0x60          2       TA1CCTL2.CCIE           TA1CCTL2.CCIFG 
+Interrupt43  =  TIMER1_A1_TAR_VECTOR    0x60          2       TA1CTL.TAIE             TA1CTL.TAIFG   
+Interrupt44  =  TIMER1_A0_VECTOR        0x62          2       TA1CCTL0.CCIE           TA1CCTL0.CCIFG 
+Interrupt45  =  DMA_VECTOR              0x64          2       DMA0CTL.DMAIE           DMA0CTL.DMAIFG 
+Interrupt46  =  DMA_VECTOR              0x64          2       DMA0CTL.DMAIE           DMA0CTL.DMAIFG 
+Interrupt47  =  USCI_A1_VECTOR          0x66          2       UCA1IE__SPI.UCRXIE      UCA1IFG__SPI.UCRXIFG
+Interrupt48  =  USCI_A1_VECTOR          0x66          2       UCA1IE__SPI.UCTXIE      UCA1IFG__SPI.UCTXIFG
+Interrupt49  =  TIMER0_A1_TACCR1_VECTOR 0x68          2       TA0CCTL1.CCIE           TA0CCTL1.CCIFG 
+Interrupt50  =  TIMER0_A1_TACCR2_VECTOR 0x68          2       TA0CCTL2.CCIE           TA0CCTL2.CCIFG 
+Interrupt51  =  TIMER0_A1_TAR_VECTOR    0x68          2       TA0CTL.TAIE             TA0CTL.TAIFG   
+Interrupt52  =  TIMER0_A0_VECTOR        0x6A          2       TA0CCTL0.CCIE           TA0CCTL0.CCIFG 
+Interrupt53  =  ADC10_VECTOR            0x6C          2       ADC10IE.ADC10IE0        ADC10IFG.ADC10IFG0
+Interrupt54  =  USCI_B0_VECTOR          0x6E          2       UCB0IE__SPI.UCRXIE      UCB0IFG__SPI.UCRXIFG
+Interrupt55  =  USCI_B0_VECTOR          0x6E          2       UCB0IE__SPI.UCTXIE      UCB0IFG__SPI.UCTXIFG
+Interrupt56  =  USCI_A0_VECTOR          0x70          2       UCA0IE__SPI.UCRXIE      UCA0IFG__SPI.UCRXIFG
+Interrupt57  =  USCI_A0_VECTOR          0x70          2       UCA0IE__SPI.UCTXIE      UCA0IFG__SPI.UCTXIFG
+Interrupt58  =  WDT_VECTOR              0x72          2       SFRIE1.WDTIE            SFRIFG1.WDTIFG 
+Interrupt59  =  TIMERB1_TBCCR1_VECTOR   0x74          2       TB0CCTL1.CCIE           TB0CCTL1.CCIFG 
+Interrupt60  =  TIMERB1_TBCCR2_VECTOR   0x74          2       TB0CCTL2.CCIE           TB0CCTL2.CCIFG 
+Interrupt61  =  TIMERB1_TBR_VECTOR      0x74          2       TB0CTL.TBIE             TB0CTL.TBIFG   
+Interrupt62  =  TIMER0_B0_VECTOR        0x76          2       TB0CCTL0.CCIE           TB0CCTL0.CCIFG 
+Interrupt63  =  COMP_D_VECTOR           0x78          2       CDINT.CDIE              CDINT.CDIFG     
+Interrupt64  =  UNMI_VECTOR             0x7A          2       SFRIE1.NMIIE            SFRIFG1.NMIIFG 
+Interrupt65  =  SYSNMI_VECTOR           0x7C          2       SFRIE1.NMIIE            SFRIFG1.NMIIFG 
+Interrupt66  =  RESET_VECTOR            0x7E          1         
+
+
+;; End of file  

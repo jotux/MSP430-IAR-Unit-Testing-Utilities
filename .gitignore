@@ -1,0 +1,8 @@
+﻿
+Debug/
+Release/
+settings/
+*.dep
+_test.txt
+_build.txt
+_test.xml

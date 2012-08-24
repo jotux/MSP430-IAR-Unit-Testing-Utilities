@@ -1,0 +1,4 @@
+ - The parameter "--code_coverage_file code_coverage.txt" needs to be appended
+to the command BEFORE the "--backend" command in the project.cspy.bat. Copy the
+project.cspy.bat file into the test folder, add the parameter then call the
+batch file as you did previously to build/test the project.

@@ -1,0 +1,9 @@
+ReadCycles()
+{
+    _cycle_cnt = (long)#CYCLECOUNTER;
+}
+
+execUserSetup()
+{
+    __setSimBreak("_cycle_cnt", "R", "ReadCycles()");
+}
