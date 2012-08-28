@@ -1,4 +1,3 @@
-
 ## Introduction
 
 This repo contains a few simple macros, scripts, and other utilities to help setup a complete unit testing framework for your MSP430 project using the IAR compiler. Note: This **ONLY** works for IAR as we are running the unit tests against the build-in IAR simulator.
@@ -12,7 +11,7 @@ To open the example project open **/example/project/demo_workspace.eww** with IA
 
 ## Currently supported devices
 
-Currently this project runs against the MSP430FR5739 but the concept can be used to test code for any MSP430 device (or even possibly any device with an IAR compiler and simulator).
+Currently this project runs against the MSP430FR5739 but the concept can be used to test code for any MSP430 device (or possibly any device with an IAR compiler and simulator).
 
 ## Setting up your test project
 
